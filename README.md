@@ -1,0 +1,1 @@
+Integrantes:  João Rodrigo Albertini - RA: 823215381  Italo Ribeiro Prates - RA: 824112590  Matheus Bueno Neri de Araujo - RA: 822160370  Victor França - RA: 824122809  Mateus Brigagão Tavares da Cunha - RA: 825117649  Nathan Anaquim Procaccia - RA: 823117175  Luiz Felipe Dutra Xavier - RA: 823126087
