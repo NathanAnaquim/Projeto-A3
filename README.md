@@ -32,6 +32,6 @@ sistema_vendas_ruim.py
 README.md
 
 ## 🔗 Cronograma
-- Setembro/2025 → Commit do código legado (esta entrega).  
+- Setembro/2025 → Commit do código legado.  
 - Outubro/2025 → Refatoração inicial (introdução de POO e modularização).  
 - Novembro/2025 → Versão final refatorada + testes unitários.  
