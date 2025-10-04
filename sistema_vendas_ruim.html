@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Vendas Ruim</title>
+</head>
+<body>
+    <h1>Sistema de Vendas Bagunçado</h1>
+
+    <h2>Produtos</h2>
+    Nome: <input id="prodNome">
+    Preço: <input id="prodPreco" type="number">
+    Quantidade: <input id="prodQtd" type="number">
+    <button onclick="cadProd()">Cadastrar Produto</button>
+    <br><br>
+
+    <h2>Clientes</h2>
+    Nome: <input id="cliNome">
+    Idade: <input id="cliIdade" type="number">
+    CPF: <input id="cliCPF">
+    <button onclick="cadCli()">Cadastrar Cliente</button>
+    <br><br>
+
+    <h2>Vender</h2>
+    CPF: <input id="vCPF">
+    Produto: <input id="vProd">
+    Quantidade: <input id="vQtd" type="number">
+    <button onclick="vende()">Vender</button>
+    <br><br>
+
+    <button onclick="relatorio()">Relatório</button>
+    <pre id="output"></pre>
+
+    <script>
+        // ❌ Listas globais: todos os dados ficam fora de qualquer classe ou módulo
+        let produtos = [];
+        let clientes = [];
+        let vendas = [];
+
+        // ❌ Função bagunçada e acoplada à interface
+        function cadProd() {
+            // ❌ Uso de nomes abreviados 'n', 'p', 'q' torna o código confuso
+            let p = {n: document.getElementById('prodNome').value,
+                     p: parseFloat(document.getElementById('prodPreco').value),
+                     q: parseInt(document.getElementById('prodQtd').value)};
+            produtos.push(p);
+            alert("Produto cadastrado!"); // ❌ alert dentro da lógica, acopla UI com lógica
+        }
+
+        // ❌ Função de cadastro de clientes também mal estruturada
+        function cadCli() {
+            let c = {n: document.getElementById('cliNome').value,
+                     i: parseInt(document.getElementById('cliIdade').value),
+                     c: document.getElementById('cliCPF').value};
+            clientes.push(c);
+            alert("Cliente cadastrado!"); // ❌ alert dentro da função
+        }
+
+        // ❌ Função de venda monolítica, mistura lógica de negócio e interface
+        function vende() {
+            let cpf = document.getElementById('vCPF').value;
+            let nome = document.getElementById('vProd').value;
+            let qtd = parseInt(document.getElementById('vQtd').value);
+
+            // ❌ Busca linear e repetida
+            let cli = clientes.find(c => c.c == cpf);
+            if(!cli){ alert("Cliente não existe"); return; } // ❌ lógica misturada com alert
+            let prod = produtos.find(p => p.n == nome);
+            if(!prod){ alert("Produto não existe"); return; }
+            if(prod.q < qtd){ alert("Sem estoque"); return; }
+
+            // ❌ Adiciona venda sem validações, sem classes, sem encapsulamento
+            vendas.push({cli: cli.n, prod: prod.n, q: qtd, total: prod.p*qtd});
+            prod.q -= qtd; // ❌ altera estoque direto
+            alert("Venda realizada!"); // ❌ print/alert dentro da lógica
+        }
+
+        // ❌ Relatório monolítico e repetitivo
+        function relatorio() {
+            let out = "----- PRODUTOS -----\n";
+            produtos.forEach(p => out += p.n + " - " + p.q + " unid - R$" + p.p + "\n");
+            out += "----- CLIENTES -----\n";
+            clientes.forEach(c => out += c.n + " - CPF: " + c.c + "\n");
+            out += "----- VENDAS -----\n";
+            vendas.forEach(v => out += v.cli + " comprou " + v.q + " " + v.prod + " - Total: R$" + v.total + "\n");
+            // ❌ Lógica de UI e relatório misturada, sem modularidade
+            document.getElementById('output').innerText = out;
+        }
+
+    </script>
+</body>
+</html>
