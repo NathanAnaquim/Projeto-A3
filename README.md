@@ -25,11 +25,26 @@ Problemas encontrados:
 - Sem testes unitários.
 - Dificuldade de manutenção e escalabilidade.
 
-## 📂 Estrutura inicial do repositório
+## 📂 Estrutura esperada no final do projeto
 
-/src
-sistema_vendas_ruim.py
-README.md
+├── src/
+│   ├── app.py                  # servidor backend Python (Flask)
+│   ├── sistema_vendas.py       # lógica de negócio (backend)
+│   ├── models/
+│   │   ├── produto.py
+│   │   ├── cliente.py
+│   │   └── venda.py
+│   ├── templates/
+│   │   ├── index.html
+│   │   ├── clientes.html
+│   │   ├── produtos.html
+│   │   ├── vendas.html
+│   │   └── relatorio.html
+│   └── static/
+│       └── style.css
+│
+└── README.md
+
 
 ## 🔗 Cronograma
 - Setembro/2025 → Commit do código legado.  
