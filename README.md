@@ -1,7 +1,8 @@
 # Projeto A3 - Sistema de Vendas
 
 ## 👥 Integrantes
-- João Rodrigo Albertini – RA: 823215381  
+- João Rodrigo Albertini – RA: 823215381
+- Leone Vicenzo Esposito - RA: 82326530
 - Ítalo Ribeiro Prates – RA: 824112590  
 - Matheus Bueno Neri de Araujo – RA: 822160370  
 - Victor França – RA: 824122809  
