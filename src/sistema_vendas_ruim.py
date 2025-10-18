@@ -1,12 +1,12 @@
 # Sistema de vendas bagunçado, maior e com mais funcionalidades
 
-produtos = []
-vendas = []
-clientes = []
-fornecedores = []
-promocoes = []
+produtos = [] # Lista de produtos cadastrados
+vendas = [] # Lista de vendas realizadas
+clientes = [] # Lista de clientes cadastrados
+fornecedores = [] # Lista de fornecedores cadastrados
+promocoes = [] # Lista de promoções cadastradas
 
-# Cadastro de produtos
+# Cadastro de produtos:
 def cad_prod(n, p, q):
     prod = {}
     prod['n'] = n           # ❌ chave abreviada, pouco legível
@@ -15,7 +15,7 @@ def cad_prod(n, p, q):
     produtos.append(prod)    # ❌ lista global, sem encapsulamento
     print(f"Produto '{n}' cadastrado!")  # ❌ print dentro da lógica
 
-# Cadastro de clientes
+# Cadastro de clientes:
 def cad_cli(n, i, c):
     cli = {}
     cli['n'] = n
@@ -24,7 +24,7 @@ def cad_cli(n, i, c):
     clientes.append(cli)    # ❌ lista global
     print(f"Cliente '{n}' cadastrado!")  # ❌ print dentro da função
 
-# Cadastro de fornecedores
+# Cadastro de fornecedores:
 def cad_fornecedor(nome, cnpj):
     f = {}
     f['nome'] = nome
@@ -32,7 +32,7 @@ def cad_fornecedor(nome, cnpj):
     fornecedores.append(f)  # ❌ lista global, sem validação
     print(f"Fornecedor '{nome}' cadastrado!")
 
-# Cadastro de promoções
+# Cadastro de promoções:
 def cad_promocao(produto_nome, desconto):
     promo = {'produto': produto_nome, 'desconto': desconto}
     promocoes.append(promo)  # ❌ lista global, sem verificação de duplicidade
@@ -116,7 +116,7 @@ def relatorio():
     total_estoque = sum([p['q'] for p in produtos])  # ❌ cálculo manual, poderia ser função
     print("Total em estoque:", total_estoque)
 
-# Relatório de vendas por cliente
+# Relatório de vendas por cliente:
 def vendas_por_cliente(cpf):
     c = acha_cli(cpf)
     if not c:
@@ -146,7 +146,7 @@ def produtos_em_promocao():
     for promo in promocoes:
         print(f"{promo['produto']} está em promoção com {promo['desconto']}% de desconto")  # ❌ repetição
 
-# Exemplo de uso bagunçado
+# Exemplo de uso bagunçado:
 cad_prod("Camiseta", 50, 10)
 cad_prod("Tênis", 200, 5)
 cad_prod("Boné", 30, 8)
