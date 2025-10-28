@@ -25,7 +25,7 @@ class SistemaVendas:
 
         produto.quantidade -= quantidade
         venda = Venda(cliente, produto, quantidade)
-        self.vendas.append(venda)
+        self.vendas.append(cliente)
         return f"Venda concluída! Total: R${venda.total}"
 
     def relatorio(self):
