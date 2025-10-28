@@ -1,6 +1,6 @@
 # Projeto A3 - Sistema de Vendas
 
-## 👥 Integrantes
+## Integrantes
 - João Rodrigo Albertini – RA: 823215381
 - Leone Vicenzo Esposito - RA: 82326530
 - Ítalo Ribeiro Prates – RA: 824112590  
@@ -10,10 +10,10 @@
 - Nathan Anaquim Procaccia – RA: 823117175  
 - Luiz Felipe Dutra Xavier – RA: 823126087  
 
-## 📌 Objetivo
+## Objetivo
 O projeto consiste em refatorar um **sistema de vendas legado** mal estruturado, aplicando princípios de **Clean Code, SOLID e Design Patterns**, além de incluir **testes unitários**.
 
-## 🚨 Código Original (Legado)
+## Código Original (Legado)
 O código inicial foi desenvolvido com diversas más práticas, para servir de base para refatoração.
 
 Problemas encontrados:
@@ -26,7 +26,7 @@ Problemas encontrados:
 - Sem testes unitários.
 - Dificuldade de manutenção e escalabilidade.
 
-## 📂 Estrutura esperada no final do projeto
+## Estrutura esperada no final do projeto
 
 ├── src/
 │   ├── app.py                  # servidor backend Python (Flask)
@@ -47,7 +47,7 @@ Problemas encontrados:
 └── README.md
 
 
-## 🔗 Cronograma
+## Cronograma
 - Setembro/2025 → Commit do código legado.  
 - Outubro/2025 → Refatoração inicial (introdução de POO e modularização).  
 - Novembro/2025 → Versão final refatorada + testes unitários.  
