@@ -27,3 +27,6 @@ def clientes():
         sistema.cadastrar_cliente(nome, idade, cpf)
         return redirect('/clientes')
     return render_template('clientes.html', clientes=sistema.clientes)
+
+if __name__ == '__main__':
+    app.run(debug=True)
