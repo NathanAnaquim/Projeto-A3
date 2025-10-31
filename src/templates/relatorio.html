@@ -1,0 +1,21 @@
+<h1>Relatório do Sistema</h1>
+<h2>Produtos</h2>
+<ul>
+  {% for p in produtos %}
+  <li>{{ p.nome }} - {{ p.quantidade }} unidades</li>
+  {% endfor %}
+</ul>
+
+<h2>Clientes</h2>
+<ul>
+  {% for c in clientes %}
+  <li>{{ c.nome }} - CPF {{ c.cpf }}</li>
+  {% endfor %}
+</ul>
+
+<h2>Vendas</h2>
+<ul>
+  {% for v in vendas %}
+  <li>{{ v.cliente.nome }} comprou {{ v.quantidade }} {{ v.produto.nome }}</li>
+  {% endfor %}
+</ul>

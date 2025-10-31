@@ -1,0 +1,18 @@
+<h1>Registrar Venda</h1>
+<form method="POST">
+  <input name="cpf" placeholder="CPF do Cliente">
+  <input name="produto" placeholder="Produto">
+  <input name="quantidade" type="number" placeholder="Quantidade">
+  <button type="submit">Vender</button>
+</form>
+
+{% if msg %}
+<p>{{ msg }}</p>
+{% endif %}
+
+<h2>Vendas Realizadas</h2>
+<ul>
+  {% for v in vendas %}
+  <li>{{ v.cliente.nome }} comprou {{ v.quantidade }}x {{ v.produto.nome }} (R${{ v.total }})</li>
+  {% endfor %}
+</ul>
