@@ -30,3 +30,14 @@ def clientes():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+@app.route('/vendas', methods=['GET', 'POST'])
+def vendas():
+    if request.method == 'POST':
+        cpf = request.form['cpf']
+        produto = request.form['produto']
+        quantidade = int(request.form['quantidade'])
+        msg = sistema.vender(cpf, produto, quantidade)
+        return render_template('vendas.html', vendas=sistema.vendas, msg=msg)
+    return render_template('vendas.html', vendas=sistema.vendas)
