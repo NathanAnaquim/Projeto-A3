@@ -1,7 +1,12 @@
+import sys
+import os
 from flask import Flask, render_template, request, redirect
+
+sys.path.append(os.path.dirname(os.path.abspath(_file_)))
+
 from sistema_vendas import SistemaVendas
 
-app = Flask(__name__)
+app = Flask(_name_)
 sistema = SistemaVendas()
 
 @app.route('/')
@@ -28,10 +33,6 @@ def clientes():
         return redirect('/clientes')
     return render_template('clientes.html', clientes=sistema.clientes)
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
 @app.route('/vendas', methods=['GET', 'POST'])
 def vendas():
     if request.method == 'POST':
@@ -41,3 +42,15 @@ def vendas():
         msg = sistema.vender(cpf, produto, quantidade)
         return render_template('vendas.html', vendas=sistema.vendas, msg=msg)
     return render_template('vendas.html', vendas=sistema.vendas)
+
+@app.route('/relatorio')
+def relatorio():
+    return render_template(
+        'relatorio.html',
+        produtos=sistema.produtos,
+        clientes=sistema.clientes,
+        vendas=sistema.vendas
+    )
+
+if _name_ == "_main_":
+    app.run(debug=True)
