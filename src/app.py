@@ -17,11 +17,38 @@ def index():
 def produtos():
     if request.method == 'POST':
         nome = request.form['nome']
-        preco = float(request.form['preco'])
-        quantidade = int(request.form['quantidade'])
+        preco = request.form['preco']
+        quantidade = request.form['quantidade']
+
+        #Nome não pode ter números 
+        if any(char.isdigit() for char in nome):
+            return render_template('produtos.html', produtos=sistema.produtos,
+                                   msg="O nome do produto não pode conter números.")
+
+        #Preço deve ser número
+        try:
+            preco = float(preco)
+            if preco <= 0:
+                raise ValueError
+        except ValueError:
+            return render_template('produtos.html', produtos=sistema.produtos,
+                                   msg="Preço inválido! Digite um número maior que zero.")
+
+        #Quantidade deve ser inteira positiva 
+        try:
+            quantidade = int(quantidade)
+            if quantidade <= 0:
+                raise ValueError
+        except ValueError:
+            return render_template('produtos.html', produtos=sistema.produtos,
+                                   msg="Quantidade inválida. Digite um número inteiro positivo.")
+
+        # Cadastro OK
         sistema.cadastrar_produto(nome, preco, quantidade)
         return redirect('/produtos')
+
     return render_template('produtos.html', produtos=sistema.produtos)
+
 
 @app.route('/clientes', methods=['GET', 'POST'])
 def clientes():

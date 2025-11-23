@@ -14,8 +14,8 @@
     <h1>Cadastro de Produtos</h1>
 
     <form method="POST">
-      <input name="nome" placeholder="Nome do Produto">
-      <input name="preco" type="number" step="0.01" placeholder="Preço">
+      <input name="nome" placeholder="Nome do Produto" required pattern="[A-Za-zÀ-ÿ\s]+" title="Use apenas letras.">
+      <input name="preco" type="number" step="0.01" min="0.01" placeholder="Preço" required>
       <input name="quantidade" type="number" placeholder="Quantidade">
       <button type="submit">Cadastrar</button>
     </form>
