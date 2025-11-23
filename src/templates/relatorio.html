@@ -1,21 +1,32 @@
-<h1>Relatório do Sistema</h1>
-<h2>Produtos</h2>
-<ul>
-  {% for p in produtos %}
-  <li>{{ p.nome }} - {{ p.quantidade }} unidades</li>
-  {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<h2>Clientes</h2>
-<ul>
-  {% for c in clientes %}
-  <li>{{ c.nome }} - CPF {{ c.cpf }}</li>
-  {% endfor %}
-</ul>
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório do Sistema</title>
 
-<h2>Vendas</h2>
-<ul>
-  {% for v in vendas %}
-  <li>{{ v.cliente.nome }} comprou {{ v.quantidade }} {{ v.produto.nome }}</li>
-  {% endfor %}
-</ul>
+    <link rel="stylesheet" href="{{ url_for('static', filename='relatorio.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+    <div class="menu-lateral">
+        <h2>Menu</h2>
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('clientes') }}">Clientes</a>
+        <a href="{{ url_for('produtos') }}">Produtos</a>
+        <a href="{{ url_for('vendas') }}">Vendas</a>
+        <a href="{{ url_for('relatorio') }}">Relatório</a>
+    </div>
+
+
+    <div class="conteudo">
+
+        <div class="relatorio-container">
+
+            <h1>Relatório do Sistema</h1>
+
+
+            <section>

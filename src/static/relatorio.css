@@ -1,0 +1,46 @@
+/*Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Caixa principal */
+.relatorio-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+.relatorio-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.relatorio-container h2 {
+    color: #2563eb;
+    border-left: 4px solid #2563eb;
+    padding-left: 10px;
+    margin-top: 25px;
+}
+
+/* Lista padrão */
+.lista {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.lista li {
+    background: #f0f0f0;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 15px;
+}

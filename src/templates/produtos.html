@@ -5,27 +5,41 @@
   <meta charset="UTF-8">
   <title>Cadastro de Produtos</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='produtos.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+
 </head>
 
 <body>
 
-  <div class="produtos-container">
+  <div class="menu-lateral">
+    <h2>Menu</h2>
+    <a href="{{ url_for('index') }}">Início</a>
+    <a href="{{ url_for('clientes') }}">Clientes</a>
+    <a href="{{ url_for('produtos') }}">Produtos</a>
+    <a href="{{ url_for('vendas') }}">Vendas</a>
+    <a href="{{ url_for('relatorio') }}">Relatório</a>
+  </div>
 
-    <h1>Cadastro de Produtos</h1>
+  <div class="conteudo">
 
-    <form method="POST">
-      <input name="nome" placeholder="Nome do Produto" required pattern="[A-Za-zÀ-ÿ\s]+" title="Use apenas letras.">
-      <input name="preco" type="number" step="0.01" min="0.01" placeholder="Preço" required>
-      <input name="quantidade" type="number" placeholder="Quantidade">
-      <button type="submit">Cadastrar</button>
-    </form>
+    <div class="produtos-container">
 
-    <ul class="produtos-lista">
-      {% for p in produtos %}
-      <li>{{ p.nome }} - {{ p.quantidade }} unidades - R${{ p.preco }}</li>
-      {% endfor %}
-    </ul>
+      <h1>Cadastro de Produtos</h1>
 
+      <form method="POST">
+        <input name="nome" placeholder="Nome do Produto" required pattern="[A-Za-zÀ-ÿ\s]+" title="Use apenas letras.">
+        <input name="preco" type="number" step="0.01" min="0.01" placeholder="Preço" required>
+        <input name="quantidade" type="number" placeholder="Quantidade">
+        <button type="submit">Cadastrar</button>
+      </form>
+
+      <ul class="produtos-lista">
+        {% for p in produtos %}
+        <li>{{ p.nome }} - {{ p.quantidade }} unidades - R${{ p.preco }}</li>
+        {% endfor %}
+      </ul>
+
+    </div>
   </div>
 
 </body>
