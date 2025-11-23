@@ -29,9 +29,29 @@ def clientes():
         nome = request.form['nome']
         idade = int(request.form['idade'])
         cpf = request.form['cpf']
+
+        # Validação nome
+        if not nome.replace(" ", "").isalpha():
+            return render_template('clientes.html', clientes=sistema.clientes,
+                                   msg="Nome inválido! Use apenas letras.")
+
+        # Validação idade
+        if idade <= 0:
+            return render_template('clientes.html', clientes=sistema.clientes,
+                                   msg="Idade deve ser maior que zero.")
+
+        # Validação CPF
+        if not cpf.isdigit() or len(cpf) != 11:
+            return render_template('clientes.html', clientes=sistema.clientes,
+                                   msg="CPF inválido! Digite apenas 11 números.")
+
+        # Cadastro OK
         sistema.cadastrar_cliente(nome, idade, cpf)
         return redirect('/clientes')
+
     return render_template('clientes.html', clientes=sistema.clientes)
+
+
 
 @app.route('/vendas', methods=['GET', 'POST'])
 def vendas():

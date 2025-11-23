@@ -14,15 +14,19 @@
     <h1>Cadastro de Clientes</h1>
 
     <form method="POST">
-      <input name="nome" placeholder="Nome">
-      <input name="idade" type="number" placeholder="Idade">
-      <input name="cpf" placeholder="CPF">
+      <input name="nome" placeholder="Nome" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" title="O nome deve conter apenas letras">
+
+      <input name="idade" type="number" min="1" placeholder="Idade">
+
+      <input name="cpf" placeholder="CPF" pattern="\d{11}" maxlength="11" title="Digite apenas números (11 dígitos)">
+
+
       <button type="submit">Cadastrar</button>
     </form>
 
     <ul class="clientes-lista">
       {% for c in clientes %}
-      <li>{{ c.nome }} - CPF {{ c.cpf }}</li>
+      <li>{{ c.nome }} - CPF {{ c.cpf }} - </li>
       {% endfor %}
     </ul>
 
