@@ -3,7 +3,7 @@ from models.cliente import Cliente
 from models.venda import Venda
 
 class SistemaVendas:
-    def _init_(self):
+    def __init__(self):
         self.produtos = []
         self.clientes = []
         self.vendas = []

@@ -2,11 +2,11 @@ import sys
 import os
 from flask import Flask, render_template, request, redirect
 
-sys.path.append(os.path.dirname(os.path.abspath(_file_)))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from sistema_vendas import SistemaVendas
 
-app = Flask(_name_)
+app = Flask(__name__)
 sistema = SistemaVendas()
 
 @app.route('/')
@@ -52,5 +52,5 @@ def relatorio():
         vendas=sistema.vendas
     )
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
