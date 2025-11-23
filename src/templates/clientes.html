@@ -1,13 +1,33 @@
-<h1>Cadastro de Clientes</h1>
-<form method="POST">
-  <input name="nome" placeholder="Nome">
-  <input name="idade" type="number" placeholder="Idade">
-  <input name="cpf" placeholder="CPF">
-  <button type="submit">Cadastrar</button>
-</form>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<ul>
-  {% for c in clientes %}
-  <li>{{ c.nome }} - CPF {{ c.cpf }}</li>
-  {% endfor %}
-</ul>
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Clientes</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='clientes.css') }}">
+</head>
+
+<body>
+
+  <div class="clientes-container">
+
+    <h1>Cadastro de Clientes</h1>
+
+    <form method="POST">
+      <input name="nome" placeholder="Nome">
+      <input name="idade" type="number" placeholder="Idade">
+      <input name="cpf" placeholder="CPF">
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <ul class="clientes-lista">
+      {% for c in clientes %}
+      <li>{{ c.nome }} - CPF {{ c.cpf }}</li>
+      {% endfor %}
+    </ul>
+
+  </div>
+
+</body>
+
+</html>
