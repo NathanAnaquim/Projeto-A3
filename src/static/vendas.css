@@ -1,0 +1,79 @@
+/* === Estilo geral === */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Caixa principal */
+.vendas-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.vendas-container h1,
+.vendas-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+.vendas-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vendas-container input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* Botão */
+.vendas-container button {
+    padding: 12px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.vendas-container button:hover {
+    background-color: #1e4fbb;
+}
+
+/* Mensagem */
+.mensagem {
+    text-align: center;
+    background: #e0f7e9;
+    color: #0f6c2b;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+/* Lista de vendas */
+.vendas-lista {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.vendas-lista li {
+    background: #f0f0f0;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}

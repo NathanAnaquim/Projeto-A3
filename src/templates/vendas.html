@@ -1,18 +1,23 @@
-<h1>Registrar Venda</h1>
-<form method="POST">
-  <input name="cpf" placeholder="CPF do Cliente">
-  <input name="produto" placeholder="Produto">
-  <input name="quantidade" type="number" placeholder="Quantidade">
-  <button type="submit">Vender</button>
-</form>
+<link rel="stylesheet" href="{{ url_for('static', filename='vendas.css') }}">
 
-{% if msg %}
-<p>{{ msg }}</p>
-{% endif %}
+<div class="vendas-container">
+  <h1>Registrar Venda</h1>
 
-<h2>Vendas Realizadas</h2>
-<ul>
-  {% for v in vendas %}
-  <li>{{ v.cliente.nome }} comprou {{ v.quantidade }}x {{ v.produto.nome }} (R${{ v.total }})</li>
-  {% endfor %}
-</ul>
+  <form method="POST">
+    <input name="cpf" placeholder="CPF do Cliente">
+    <input name="produto" placeholder="Produto">
+    <input name="quantidade" type="number" placeholder="Quantidade">
+    <button type="submit">Vender</button>
+  </form>
+
+  {% if msg %}
+  <p class="mensagem">{{ msg }}</p>
+  {% endif %}
+
+  <h2>Vendas Realizadas</h2>
+  <ul class="vendas-lista">
+    {% for v in vendas %}
+    <li>{{ v.cliente.nome }} comprou {{ v.quantidade }}x {{ v.produto.nome }} (R${{ v.total }})</li>
+    {% endfor %}
+  </ul>
+</div>
