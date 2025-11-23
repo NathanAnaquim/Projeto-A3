@@ -1,0 +1,68 @@
+/* === Estilo geral para a página de clientes === */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Caixa central */
+.clientes-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.clientes-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* Formulário */
+.clientes-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.clientes-container input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.clientes-container button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.clientes-container button:hover {
+    background-color: #45a049;
+}
+
+/* Lista */
+.clientes-lista {
+    margin-top: 25px;
+    list-style: none;
+    padding: 0;
+}
+
+.clientes-lista li {
+    background: #f0f0f0;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
