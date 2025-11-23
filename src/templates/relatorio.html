@@ -30,3 +30,10 @@
 
 
             <section>
+                <h2>Produtos</h2>
+                <ul class="lista">
+                    {% for p in produtos %}
+                    <li>{{ p.nome }} — {{ p.quantidade }} unidades</li>
+                    {% endfor %}
+                </ul>
+            </section>
