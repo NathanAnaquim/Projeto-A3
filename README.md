@@ -13,3 +13,5 @@
 ## Objetivo
 O projeto consiste em refatorar um **sistema de vendas legado** mal estruturado, aplicando princípios de **Clean Code, SOLID e Design Patterns**, além de incluir **testes unitários**.
 
+## Link Video
+https://www.youtube.com/watch?v=HwVtFgQQhcQ
