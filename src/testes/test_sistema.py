@@ -16,3 +16,10 @@ def test_venda_sucesso():
     s.cadastrar_produto("Tênis", 200, 5)
     msg = s.vender("111", "Tênis", 1)
     assert "Venda concluída" in msg
+
+def test_venda_falha():
+    s = SistemaVendas()
+    s.cadastrar_cliente("João", 30, "111")
+    s.cadastrar_produto("Tênis", 200, 5)
+    msg = s.vender("111", "Tênis", -1)
+    assert "Venda concluída" not in msg
