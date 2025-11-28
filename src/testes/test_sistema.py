@@ -24,7 +24,7 @@ def test_venda_falha_quantidade_invalida():
 
     msg = s.vender("111", "Tênis", -1)
 
-    assert msg == "Quantidade inválida!"
+    assert msg == "Quantidade inválida! Informe um número maior que zero."
 
 def test_venda_falha_sem_estoque():
     s = SistemaVendas()
