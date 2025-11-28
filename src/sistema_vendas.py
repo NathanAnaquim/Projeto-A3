@@ -15,18 +15,31 @@ class SistemaVendas:
         self.clientes.append(Cliente(nome, idade, cpf))
 
     def vender(self, cpf, nome_produto, quantidade):
-        cliente = next((c for c in self.clientes if c.cpf == cpf), None)
-        produto = next((p for p in self.produtos if p.nome == nome_produto), None)
+        # Quantidade inválida
+        if quantidade <= 0:
+            return "Quantidade inválida! Informe um número maior que zero."
 
-        if not cliente or not produto:
-            return "Cliente ou produto não encontrado!"
+        # Buscar cliente
+        cliente = next((c for c in self.clientes if c.cpf == cpf), None)
+        if not cliente:
+            return "Cliente não encontrado!"
+
+        # Buscar produto
+        produto = next((p for p in self.produtos if p.nome == nome_produto), None)
+        if not produto:
+            return "Produto não encontrado!"
+
+        # Estoque insuficiente
         if produto.quantidade < quantidade:
             return "Estoque insuficiente!"
 
+        # Processa venda
         produto.quantidade -= quantidade
         venda = Venda(cliente, produto, quantidade)
         self.vendas.append(venda)
+
         return f"Venda concluída! Total: R${venda.total}"
+
 
     def relatorio(self):
         texto = "=== RELATÓRIO ===\n"
